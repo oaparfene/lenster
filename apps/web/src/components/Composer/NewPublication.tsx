@@ -86,6 +86,9 @@ const ReferenceSettings = dynamic(() => import('@components/Composer/Actions/Ref
 const AccessSettings = dynamic(() => import('@components/Composer/Actions/AccessSettings'), {
   loading: () => <div className="shimmer mb-1 h-5 w-5 rounded-lg" />
 });
+const ZK3Settings = dynamic(() => import('@components/Composer/Actions/ZK3Settings/ZK3Settings'), {
+  loading: () => <div className="mb-1 w-5 h-5 rounded-lg shimmer" />
+});
 
 interface NewPublicationProps {
   publication: Publication;
@@ -550,6 +553,7 @@ const NewPublication: FC<NewPublicationProps> = ({ publication }) => {
           <CollectSettings />
           <ReferenceSettings />
           <AccessSettings />
+          <ZK3Settings />
         </div>
         <div className="ml-auto pt-2 sm:pt-0">
           <Button
