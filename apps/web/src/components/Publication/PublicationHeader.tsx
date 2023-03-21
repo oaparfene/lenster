@@ -22,13 +22,13 @@ const PublicationHeader: FC<PublicationHeaderProps> = ({ publication, className 
   const profile = feedItem
     ? rootPublication.profile
     : isMirror
-    ? publication?.mirrorOf?.profile
-    : publication?.profile;
+      ? publication?.mirrorOf?.profile
+      : publication?.profile;
   const timestamp = feedItem
     ? rootPublication.createdAt
     : isMirror
-    ? publication?.mirrorOf?.createdAt
-    : publication?.createdAt;
+      ? publication?.mirrorOf?.createdAt
+      : publication?.createdAt;
 
   return (
     <div
