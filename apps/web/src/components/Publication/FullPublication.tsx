@@ -42,7 +42,12 @@ const FullPublication: FC<Props> = ({ publication }) => {
       <div>
         <div className="flex justify-between pb-4 space-x-1.5">
           {/* @ts-ignore */}
-          <UserProfile profile={profile ?? publication?.collectedBy?.defaultProfile} showStatus />
+          <div className="flex justify-start">
+            <UserProfile profile={profile ?? publication?.collectedBy?.defaultProfile} showStatus />
+            <label className="!bg-brand-500 !text-white text-xs dark:bg-opacity-10 rounded-full ml-4 mb-5 px-3 sm:px-4 py-1.5 text-brand border border-brand-300 dark:border-brand-500">
+              {publication?.metadata.attributes.find((e) => e.traitType === 'zk3Circle')?.value?.toString()}
+            </label>
+          </div>
           <PublicationMenu publication={publication} />
         </div>
         <div className="ml-[53px]">
@@ -52,6 +57,9 @@ const FullPublication: FC<Props> = ({ publication }) => {
             <>
               <PublicationBody publication={publication} />
               <div className="text-sm lt-text-gray-500 my-3">
+                <label>metadata: </label>
+                <label>{JSON.stringify(publication?.metadata.attributes)}</label>
+                <br />
                 <span title={formatTime(timestamp)}>
                   {dayjs(new Date(timestamp)).format('hh:mm A · MMM D, YYYY')}
                 </span>

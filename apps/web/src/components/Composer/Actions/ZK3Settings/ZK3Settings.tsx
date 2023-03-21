@@ -3,7 +3,7 @@ import { Spinner } from '@components/UI/Spinner';
 import { Tooltip } from '@components/UI/Tooltip';
 import useOnClickOutside from '@components/utils/hooks/useOnClickOutside';
 import { Menu } from '@headlessui/react';
-import { MusicNoteIcon, PhotographIcon, VideoCameraIcon, KeyIcon } from '@heroicons/react/outline';
+import { KeyIcon,MusicNoteIcon, PhotographIcon, VideoCameraIcon } from '@heroicons/react/outline';
 import { Analytics } from '@lib/analytics';
 import { t } from '@lingui/macro';
 import clsx from 'clsx';

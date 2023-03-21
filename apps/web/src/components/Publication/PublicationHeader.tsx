@@ -21,24 +21,29 @@ const PublicationHeader: FC<Props> = ({ publication, className = '', feedItem })
   const profile = feedItem
     ? rootPublication.profile
     : isMirror
-    ? publication?.mirrorOf?.profile
-    : publication?.profile;
+      ? publication?.mirrorOf?.profile
+      : publication?.profile;
   const timestamp = feedItem
     ? rootPublication.createdAt
     : isMirror
-    ? publication?.mirrorOf?.createdAt
-    : publication?.createdAt;
+      ? publication?.mirrorOf?.createdAt
+      : publication?.createdAt;
 
   return (
     <div className={clsx('flex justify-between space-x-1.5', className)}>
-      <span onClick={(event) => event.stopPropagation()}>
-        <UserProfile
-          // @ts-ignore
-          profile={profile ?? publication?.collectedBy?.defaultProfile}
-          timestamp={timestamp}
-          showStatus
-        />
-      </span>
+      <div className="flex justify-start">
+        <span onClick={(event) => event.stopPropagation()}>
+          <UserProfile
+            // @ts-ignore
+            profile={profile ?? publication?.collectedBy?.defaultProfile}
+            timestamp={timestamp}
+            showStatus
+          />
+        </span>
+        <label className="!bg-brand-500 !text-white text-xs dark:bg-opacity-10 rounded-full ml-4 mb-5 px-3 sm:px-4 py-1.5 text-brand border border-brand-300 dark:border-brand-500">
+          {publication?.metadata.attributes.find((e) => e.traitType === 'zk3Circle')?.value?.toString()}
+        </label>
+      </div>
       <div className="flex items-center space-x-1 !-mr-[7px]">
         {staffMode && <Source publication={publication} />}
         <PublicationMenu publication={publication} />
