@@ -3,11 +3,10 @@ import { Spinner } from '@components/UI/Spinner';
 import { Tooltip } from '@components/UI/Tooltip';
 import useOnClickOutside from '@components/utils/hooks/useOnClickOutside';
 import { Menu } from '@headlessui/react';
-
 import { KeyIcon } from '@heroicons/react/outline';
 // import { t } from '@lingui/macro';
 import clsx from 'clsx';
-import type { FC, MouseEventHandler } from 'react';
+import type { FC } from 'react';
 import { useId, useRef, useState } from 'react';
 // import toast from 'react-hot-toast';
 import { usePublicationStore } from 'src/store/publication';
@@ -22,14 +21,6 @@ const ZK3: FC = () => {
   const dropdownRef = useRef(null);
 
   useOnClickOutside(dropdownRef, () => setShowMenu(false));
-
-  const _handleZK3 = (_evt: MouseEventHandler) => {
-    // evt.preventDefault();
-
-    setShowMenu(false);
-
-    alert('Work in progress. Please check back later.');
-  };
 
   return (
     <Menu as="div">

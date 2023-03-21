@@ -35,9 +35,14 @@ const PublicationHeader: FC<PublicationHeaderProps> = ({ publication, className 
       className={clsx('flex justify-between space-x-1.5', className)}
       data-testid={`publication-${publication.id}-header`}
     >
-      <span onClick={stopEventPropagation}>
-        <UserProfile profile={profile} timestamp={timestamp} showStatus />
-      </span>
+      <div className="flex justify-start">
+        <span onClick={stopEventPropagation}>
+          <UserProfile profile={profile} timestamp={timestamp} showStatus />
+        </span>
+        <label className="!bg-brand-500 !text-white text-xs dark:bg-opacity-10 rounded-full ml-4 mb-5 px-3 sm:px-4 py-1.5 text-brand border border-brand-300 dark:border-brand-500">
+          {publication?.metadata.attributes.find((e) => e.traitType === 'zk3Circle')?.value?.toString()}
+        </label>
+      </div>
       <div className="!-mr-[7px] flex items-center space-x-1">
         {modMode && <Source publication={publication} />}
         <PublicationMenu publication={publication} />

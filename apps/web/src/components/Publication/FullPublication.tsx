@@ -38,9 +38,6 @@ const FullPublication: FC<FullPublicationProps> = ({ publication }) => {
       <PublicationType publication={publication} showType />
       <div>
         <PublicationHeader className="pb-4" publication={publication} />
-        <div className="flex justify-between space-x-1.5 pb-4">
-          <PublicationMenu publication={publication} />
-        </div>
         <div className="ml-[53px]">
           {publication?.hidden ? (
             <HiddenPublication type={publication.__typename} />
