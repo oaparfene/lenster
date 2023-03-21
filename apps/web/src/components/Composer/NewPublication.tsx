@@ -87,7 +87,7 @@ const AccessSettings = dynamic(() => import('@components/Composer/Actions/Access
   loading: () => <div className="shimmer mb-1 h-5 w-5 rounded-lg" />
 });
 const ZK3Settings = dynamic(() => import('@components/Composer/Actions/ZK3Settings/ZK3Settings'), {
-  loading: () => <div className="mb-1 w-5 h-5 rounded-lg shimmer" />
+  loading: () => <div className="shimmer mb-1 h-5 w-5 rounded-lg" />
 });
 
 interface NewPublicationProps {
