@@ -21,13 +21,13 @@ const PublicationHeader: FC<Props> = ({ publication, className = '', feedItem })
   const profile = feedItem
     ? rootPublication.profile
     : isMirror
-      ? publication?.mirrorOf?.profile
-      : publication?.profile;
+    ? publication?.mirrorOf?.profile
+    : publication?.profile;
   const timestamp = feedItem
     ? rootPublication.createdAt
     : isMirror
-      ? publication?.mirrorOf?.createdAt
-      : publication?.createdAt;
+    ? publication?.mirrorOf?.createdAt
+    : publication?.createdAt;
 
   return (
     <div className={clsx('flex justify-between space-x-1.5', className)}>
