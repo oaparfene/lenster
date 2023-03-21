@@ -6,7 +6,6 @@ import type { FC } from 'react';
 import getAppName from 'utils/getAppName';
 
 import PublicationActions from './Actions';
-import PublicationMenu from './Actions/Menu';
 import HiddenPublication from './HiddenPublication';
 import PublicationBody from './PublicationBody';
 import PublicationHeader from './PublicationHeader';

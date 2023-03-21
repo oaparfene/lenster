@@ -22,13 +22,13 @@ const PublicationHeader: FC<PublicationHeaderProps> = ({ publication, className 
   const profile = feedItem
     ? rootPublication.profile
     : isMirror
-      ? publication?.mirrorOf?.profile
-      : publication?.profile;
+    ? publication?.mirrorOf?.profile
+    : publication?.profile;
   const timestamp = feedItem
     ? rootPublication.createdAt
     : isMirror
-      ? publication?.mirrorOf?.createdAt
-      : publication?.createdAt;
+    ? publication?.mirrorOf?.createdAt
+    : publication?.createdAt;
 
   return (
     <div
@@ -39,7 +39,7 @@ const PublicationHeader: FC<PublicationHeaderProps> = ({ publication, className 
         <span onClick={stopEventPropagation}>
           <UserProfile profile={profile} timestamp={timestamp} showStatus />
         </span>
-        <label className="!bg-brand-500 !text-white text-xs dark:bg-opacity-10 rounded-full ml-4 mb-5 px-3 sm:px-4 py-1.5 text-brand border border-brand-300 dark:border-brand-500">
+        <label className="!bg-brand-500 text-brand border-brand-300 dark:border-brand-500 ml-4 mb-5 rounded-full border px-3 py-1.5 text-xs !text-white dark:bg-opacity-10 sm:px-4">
           {publication?.metadata.attributes.find((e) => e.traitType === 'zk3Circle')?.value?.toString()}
         </label>
       </div>
