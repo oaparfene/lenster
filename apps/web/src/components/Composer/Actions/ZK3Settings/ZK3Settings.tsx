@@ -3,6 +3,7 @@ import { Spinner } from '@components/UI/Spinner';
 import { Tooltip } from '@components/UI/Tooltip';
 import useOnClickOutside from '@components/utils/hooks/useOnClickOutside';
 import { Menu } from '@headlessui/react';
+
 import { KeyIcon } from '@heroicons/react/outline';
 // import { t } from '@lingui/macro';
 import clsx from 'clsx';
@@ -14,6 +15,7 @@ import { usePublicationStore } from 'src/store/publication';
 
 const ZK3: FC = () => {
   // const attachments = usePublicationStore((state) => state.attachments);
+
   const isUploading = usePublicationStore((state) => state.isUploading);
   const [showMenu, setShowMenu] = useState(false);
   const id = useId();
@@ -23,6 +25,7 @@ const ZK3: FC = () => {
 
   const _handleZK3 = (_evt: MouseEventHandler) => {
     // evt.preventDefault();
+
     setShowMenu(false);
 
     alert('Work in progress. Please check back later.');
