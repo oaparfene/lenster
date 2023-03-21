@@ -43,6 +43,9 @@ const FullPublication: FC<FullPublicationProps> = ({ publication }) => {
             <>
               <PublicationBody publication={publication} />
               <div className="lt-text-gray-500 my-3 text-sm">
+                <label>metadata: </label>
+                <label>{JSON.stringify(publication?.metadata.attributes)}</label>
+                <br />
                 <span title={formatTime(timestamp)}>
                   {dayjs(new Date(timestamp)).format('hh:mm A · MMM D, YYYY')}
                 </span>
